@@ -1,0 +1,150 @@
+.sweet-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sweet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.sweet-card.out-of-stock {
+  opacity: 0.7;
+  border: 2px solid #ef4444;
+}
+
+.sweet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 15px;
+}
+
+.sweet-card h3 {
+  margin: 0;
+  color: #333;
+  font-size: 22px;
+}
+
+.btn-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px;
+  transition: transform 0.2s;
+}
+
+.btn-delete:hover {
+  transform: scale(1.2);
+}
+
+.sweet-category {
+  display: inline-block;
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.sweet-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #10b981;
+  margin: 10px 0;
+}
+
+.sweet-quantity {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.sweet-quantity.zero {
+  color: #ef4444;
+}
+
+.out-of-stock-badge {
+  display: inline-block;
+  margin-left: 10px;
+  background: #ef4444;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sweet-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.purchase-section,
+.restock-section {
+  display: flex;
+  gap: 10px;
+}
+
+.quantity-input {
+  width: 70px;
+  padding: 8px;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.quantity-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.btn-purchase,
+.btn-restock {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.btn-purchase {
+  background: #667eea;
+  color: white;
+}
+
+.btn-purchase:hover:not(:disabled) {
+  background: #5568d3;
+}
+
+.btn-purchase:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-restock {
+  background: #fbbf24;
+  color: #78350f;
+}
+
+.btn-restock:hover:not(:disabled) {
+  background: #f59e0b;
+}
+
+.btn-restock:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  color: #666;
+}

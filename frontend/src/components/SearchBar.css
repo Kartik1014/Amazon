@@ -1,0 +1,77 @@
+.search-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 150px;
+  padding: 10px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.price-input {
+  flex: 0.5;
+  min-width: 100px;
+}
+
+.btn-search,
+.btn-reset {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.btn-search {
+  background: #667eea;
+  color: white;
+}
+
+.btn-search:hover {
+  background: #5568d3;
+}
+
+.btn-reset {
+  background: #e0e0e0;
+  color: #666;
+}
+
+.btn-reset:hover {
+  background: #d0d0d0;
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .search-input,
+  .price-input {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .btn-search,
+  .btn-reset {
+    width: 100%;
+  }
+}
