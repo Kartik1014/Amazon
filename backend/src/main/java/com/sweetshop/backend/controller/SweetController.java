@@ -21,7 +21,7 @@ public class SweetController {
     private SweetService sweetService;
 
     @PostMapping
-    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> createSweet(@Valid @RequestBody Sweet sweet) {
         try {
             Sweet created = sweetService.createSweet(sweet);
@@ -61,7 +61,7 @@ public class SweetController {
     }
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> updateSweet(@PathVariable Long id, @Valid @RequestBody Sweet sweet) {
         try {
             Sweet updated = sweetService.updateSweet(id, sweet);
