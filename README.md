@@ -181,16 +181,24 @@ Open your browser and navigate to the frontend URL (default: `http://localhost:5
 
 ### Default Test Credentials
 
-You can register a new account or use these test accounts (after creating them):
+**✨ New Feature:** The application automatically creates default accounts on first startup!
 
-- **Regular User**: Create via registration
-- **Admin User**: Register and manually update the role in the database to "ADMIN"
+#### Quick Login Options
+The login page features convenient one-click login buttons:
 
-To create an admin user manually:
-```sql
--- After registering a user, update their role
-UPDATE users SET role = 'ADMIN' WHERE username = 'your_username';
-```
+- **👑 Login as Admin**
+  - Username: `admin`
+  - Password: `admin`
+  - Full admin privileges (create, update, delete, restock)
+
+- **👤 Login as User**
+  - Username: `user`
+  - Password: `user`
+  - Standard user privileges (view, search, purchase)
+
+These accounts are automatically created by the `DataInitializer` when the application starts. See [DEFAULT_ACCOUNTS.md](DEFAULT_ACCOUNTS.md) for details.
+
+**Alternative:** You can also register new accounts via the registration form.
 
 ## API Documentation
 
