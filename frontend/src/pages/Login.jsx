@@ -30,6 +30,20 @@ function Login() {
     }
   };
 
+  const handleQuickLogin = async (username, password) => {
+    setLoading(true);
+    setError('');
+
+    const result = await login({ username, password });
+    setLoading(false);
+
+    if (result.success) {
+      navigate('/dashboard');
+    } else {
+      setError(result.error);
+    }
+  };
+
   return (
     <div className="auth-container">
       <div className="auth-card">
@@ -64,6 +78,29 @@ function Login() {
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
+        <div className="quick-login-section">
+          <p className="quick-login-title">Quick Login Options:</p>
+          <div className="quick-login-buttons">
+            <button
+              type="button"
+              onClick={() => handleQuickLogin('admin', 'admin')}
+              className="btn-quick-admin"
+              disabled={loading}
+            >
+              <span className="quick-login-icon">👑</span>
+              Login as Admin
+            </button>
+            <button
+              type="button"
+              onClick={() => handleQuickLogin('user', 'user')}
+              className="btn-quick-user"
+              disabled={loading}
+            >
+              <span className="quick-login-icon">👤</span>
+              Login as User
+            </button>
+          </div>
+        </div>
         <p className="auth-link">
           Don't have an account? <Link to="/register">Register here</Link>
         </p>
